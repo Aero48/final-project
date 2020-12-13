@@ -89,7 +89,7 @@ function Ball(){
             //Blocks with a health value of zero are invisible and are uncollidable
             if(blocks[i].health > 0){
                 if (this.x + this.d > blocks[i].x && this.x - this.d < blocks[i].x + blocks[i].w && this.y + this.d > blocks[i].y && this.y - this.d < blocks[i].y + blocks[i].h){
-                    //This if statement makes it so the block only registers one hit even if the ball stays within it's bounds for longer than 1 frame
+                    //This if statement makes it so the block only registers one hit even if the ball stays within its bounds for longer than 1 frame
                     if(blocks[i].canBeHit){
                         //Gray blocks are unbreakable and don't count towards score/level clear
                         if(blocks[i].breakable){
@@ -222,7 +222,7 @@ function Block(x,y,health){
     this.senseBall = function(ballX, ballY, ballD, ballCollide){
         //Only updates ball direction values if there is no collision happening
         if(!ballCollide){
-            //Sets ballDir to 1 when the ball is above of below
+            //Sets ballDir to 1 when the ball is above or below
             if(ballX + ballD > this.x && ballX - ballD < this.x + this.w){
                 this.ballDir = 1;
 
@@ -313,7 +313,7 @@ let levelCreator = {
     //This function uses the 2d array of levels to set up all the block objects
     generate: function(){
         for(n = 0; n<this.levels[this.currentLevel].length; n++){
-            //Ids 0-6 represent blocks with respective health health values. Id 9 represents unbreakable blocks
+            //Ids 0-6 represent blocks with respective health values. Id 9 represents unbreakable blocks
             switch(this.levels[this.currentLevel][n]){
                 case 0:
                     blocks[n].health = 0;
