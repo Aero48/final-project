@@ -439,6 +439,7 @@ function keyPressed(){
     if (keyCode === ENTER) {
         titleScreen = false;
         score = 0;
+        rectangle.w = 80;
     }else if(key === 'h'){
         titleScreen = false;
         score = 0;
